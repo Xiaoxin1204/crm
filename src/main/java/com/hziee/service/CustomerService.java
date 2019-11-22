@@ -26,4 +26,7 @@ public class CustomerService {
         return new PageResult<>(pageInfo.getTotal(),pageInfo.getList(),pageInfo.getPages());
     }
 
+    public Customer findCustomerById(int id) {
+        return customerDao.selectByPrimaryKey(id);
+    }
 }

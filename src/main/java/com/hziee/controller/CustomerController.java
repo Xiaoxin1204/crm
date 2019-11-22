@@ -24,4 +24,12 @@ public class CustomerController {
         return result;
     }
 
+    @GetMapping("findCustomerById")
+    public Customer findCustomerById(int id) {
+        return customerService.findCustomerById(id);
+    }
+
+
+
+
 }
