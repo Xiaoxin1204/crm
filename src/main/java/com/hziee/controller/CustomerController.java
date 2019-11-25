@@ -25,8 +25,8 @@ public class CustomerController {
     }
 
     @GetMapping("findCustomerById")
-    public Customer findCustomerById(int id) {
-        return customerService.findCustomerById(id);
+    public Customer findCustomerById(int customerId) {
+        return customerService.findCustomerById(customerId);
     }
 
 
