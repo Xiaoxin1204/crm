@@ -20,4 +20,8 @@ public class LinkmanService {
         List<Linkman> linkmanList = linkmanDao.select(linkman);
         return linkmanList;
     }
+
+    public void updateLinkman(Linkman linkman) {
+        linkmanDao.updateByPrimaryKeySelective(linkman);
+    }
 }

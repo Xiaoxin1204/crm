@@ -26,4 +26,15 @@ public class CustomerService {
         return new PageResult<>(pageInfo.getTotal(),pageInfo.getList(),pageInfo.getPages());
     }
 
+    public void addCustomer(Customer customer) {
+        customerDao.insertSelective(customer);
+    }
+
+    public void deleteCustomer(Integer customerId) {
+        customerDao.deleteByPrimaryKey(customerId);
+    }
+
+    public void updateCustomer(Customer customer) {
+        customerDao.updateByPrimaryKeySelective(customer);
+    }
 }

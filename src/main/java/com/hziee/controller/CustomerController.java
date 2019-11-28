@@ -4,10 +4,7 @@ import com.hziee.pojo.Customer;
 import com.hziee.pojo.PageResult;
 import com.hziee.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("customer")
@@ -24,4 +21,19 @@ public class CustomerController {
         return result;
     }
 
+    @PostMapping("addCustomer")
+    public void addCustomer(@RequestBody Customer customer) {
+        customerService.addCustomer(customer);
+    }
+
+
+    @DeleteMapping
+    public void deleteCustomer(Integer customerId) {
+        customerService.deleteCustomer(customerId);
+    }
+
+    @PutMapping
+    public void updateCustomer(@RequestBody Customer customer) {
+        customerService.updateCustomer(customer);
+    }
 }
