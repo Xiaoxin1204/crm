@@ -3,9 +3,9 @@ package com.hziee.pojo;
 import java.util.List;
 
 public class PageResult<T> {
-    private long total;
+    private long total; //总条数
     private List<T> items;
-    private int pages;
+    private int pages;//总页数
 
     @Override
     public String toString() {
