@@ -26,6 +26,10 @@ public class CustomerController {
         customerService.addCustomer(customer);
     }
 
+    @GetMapping("findCustomerById")
+    public Customer findCustomerById(int id) {
+        return customerService.findCustomerById(id);
+    }
 
     @DeleteMapping
     public void deleteCustomer(Integer customerId) {

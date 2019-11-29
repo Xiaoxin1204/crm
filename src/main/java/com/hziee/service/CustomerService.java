@@ -25,7 +25,9 @@ public class CustomerService {
         PageInfo pageInfo = new PageInfo(customers);
         return new PageResult<>(pageInfo.getTotal(),pageInfo.getList(),pageInfo.getPages());
     }
-
+    public Customer findCustomerById(int id) {
+        return customerDao.selectByPrimaryKey(id);
+    }
     public void addCustomer(Customer customer) {
         customerDao.insertSelective(customer);
     }
