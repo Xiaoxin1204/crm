@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @Transactional
@@ -29,6 +30,11 @@ public class CustomerService {
         return customerDao.selectByPrimaryKey(id);
     }
     public void addCustomer(Customer customer) {
+        String uuid = UUID.randomUUID().toString().substring(0,6);
+        customer.setSerialNumber(uuid);
+        customer.setState(1);
+        customer.setCompId(1);
+        customer.setEmpId(1);
         customerDao.insertSelective(customer);
     }
 

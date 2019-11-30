@@ -24,4 +24,13 @@ public class LinkmanService {
     public void updateLinkman(Linkman linkman) {
         linkmanDao.updateByPrimaryKeySelective(linkman);
     }
+
+    public void addLinkman(Linkman linkman) {
+        linkman.setCustomerId(1);
+        linkmanDao.insertSelective(linkman);
+    }
+
+    public void delLinkman(Integer linkmanId) {
+        linkmanDao.deleteByPrimaryKey(linkmanId);
+    }
 }
