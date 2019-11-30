@@ -27,8 +27,8 @@ public class CustomerController {
     }
 
     @GetMapping("findCustomerById")
-    public Customer findCustomerById(int id) {
-        return customerService.findCustomerById(id);
+    public Customer findCustomerById(Integer customerId) {
+        return customerService.findCustomerById(customerId);
     }
 
     @DeleteMapping
