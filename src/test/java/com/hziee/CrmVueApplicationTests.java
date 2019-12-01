@@ -2,9 +2,11 @@ package com.hziee;
 
 import com.hziee.pojo.Customer;
 import com.hziee.service.CustomerService;
+import com.hziee.utils.OrderIdUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.annotation.OrderUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -20,7 +22,10 @@ class CrmVueApplicationTests {
 
     @Test
     void testuuid() {
-        String uuid = UUID.randomUUID().toString().substring(0,6);
-        System.out.println(uuid);
+        //String uuid = UUID.randomUUID().toString().substring(0,6);
+        System.out.println(OrderIdUtil.generateUniqueKey());
+        System.out.println(OrderIdUtil.generateUniqueKey());
+        System.out.println(OrderIdUtil.generateUniqueKey());
+        System.out.println(OrderIdUtil.generateUniqueKey());
     }
 }

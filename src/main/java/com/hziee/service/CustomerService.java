@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -35,6 +36,7 @@ public class CustomerService {
         customer.setState(1);
         customer.setCompId(1);
         customer.setEmpId(1);
+        customer.setCreateTime(new Date());
         customerDao.insertSelective(customer);
     }
 
