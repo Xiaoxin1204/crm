@@ -6,6 +6,8 @@ import com.hziee.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("customer")
 public class CustomerController {
@@ -39,5 +41,35 @@ public class CustomerController {
     @PutMapping
     public void updateCustomer(@RequestBody Customer customer) {
         customerService.updateCustomer(customer);
+    }
+
+    /**
+     * @author:xiaoxin on 2019/12/3
+     * @return:
+     * @description: 查询公海中的客户数据
+     */
+    @GetMapping("findCustomerInSeas")
+    public List<Customer> findCustomerInSeas() {
+        return customerService.findCustomerInSeas();
+    }
+
+    /**
+     * @author:xiaoxin on 2019/12/3
+     * @return:
+     * @description: 将客户放入公海
+     */
+    @GetMapping("toHighSeas")
+    public void toHighSeas(Integer customerId) {
+        customerService.toHighSeas(customerId);
+    }
+
+    /**
+     * @author:xiaoxin on 2019/12/3
+     * @return:
+     * @description: 从公海中领取客户
+     */
+    @GetMapping("receiveCustomer")
+    public void receiveCustomer(Integer customerId) {
+        customerService.receiveCustomer(customerId);
     }
 }
