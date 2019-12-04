@@ -26,7 +26,7 @@ public class Customer {
     private String area;//地区
     private String compAddress;//公司地址
     private String level;//客户登记S,A,B,C
-    private String credit;//客户信用度
+    private Integer credit;//客户信用度
     private String licenseNumber;//营业执照编号
     private String corporation;//法人
     private String registerMoney;//注册资金
@@ -52,7 +52,7 @@ public class Customer {
                 ", area='" + area + '\'' +
                 ", compAddress='" + compAddress + '\'' +
                 ", level='" + level + '\'' +
-                ", credit='" + credit + '\'' +
+                ", credit=" + credit +
                 ", licenseNumber='" + licenseNumber + '\'' +
                 ", corporation='" + corporation + '\'' +
                 ", registerMoney='" + registerMoney + '\'' +
@@ -168,11 +168,11 @@ public class Customer {
         this.level = level;
     }
 
-    public String getCredit() {
+    public Integer getCredit() {
         return credit;
     }
 
-    public void setCredit(String credit) {
+    public void setCredit(Integer credit) {
         this.credit = credit;
     }
 
