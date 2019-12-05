@@ -33,4 +33,8 @@ public class LinkmanService {
     public void delLinkman(Integer linkmanId) {
         linkmanDao.deleteByPrimaryKey(linkmanId);
     }
+
+    public Linkman findLinkmanById(Integer id) {
+        return linkmanDao.selectByPrimaryKey(id);
+    }
 }

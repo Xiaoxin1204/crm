@@ -34,4 +34,9 @@ public class LinkmanController {
     public void delLinkman(Integer linkmanId) {
         linkmanService.delLinkman(linkmanId);
     }
+
+    @GetMapping("findLinkmanById")
+    public Linkman findLinkmanById(Integer id) {
+       return linkmanService.findLinkmanById(id);
+    }
 }
